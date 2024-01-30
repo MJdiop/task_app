@@ -1,0 +1,64 @@
+.tasks {
+  width: 30vw;
+  box-shadow: 0px 0px 4px 0px rgba(31, 116, 179, 0.1),
+    0px 0px 4px 0px rgba(31, 116, 179, 0.1);
+  border-radius: 8px;
+  padding: 18px 60px;
+  background-color: #fff;
+
+  .tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      color: #1f74b3;
+      font-size: 25.818px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .clear {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: #1f74b3;
+        margin-right: 5px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+
+  .tasks-list {
+    height: 28vh;
+    overflow-y: scroll;
+
+    & {
+      --sb-track-color: #ffffff;
+      --sb-thumb-color: #1f74b3;
+      --sb-size: 4px;
+
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+
+    &::-webkit-scrollbar {
+      width: var(--sb-size);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: var(--sb-size);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: var(--sb-size);
+    }
+  }
+}

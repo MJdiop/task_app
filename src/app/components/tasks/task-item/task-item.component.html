@@ -1,0 +1,47 @@
+<div class="task-item">
+  <label
+    for="{{ task.text }}"
+    [style.textDecoration]="task.done ? textDecoration : null"
+  >
+    <input
+      type="checkbox"
+      name="{{ task.text }}"
+      id="task"
+      [checked]="task.done"
+      (click)="toggleTask(task)"
+    />
+    <input
+      class="task-text"
+      type="text"
+      [(ngModel)]="task.text"
+      (ngModelChange)="editTask(task)"
+      value="{{ isEditing ? 'New task ' : task.text }}"
+    />
+  </label>
+
+  <div class="task-actions">
+    <img
+      class="btn"
+      src="../../../../assets/icon-edit.png"
+      width="24.82px"
+      alt="edit img"
+      (click)="handleClickEdit()"
+    />
+    <img
+      class="btn"
+      src="../../../../assets/icon-delete.png"
+      width="24.82px"
+      alt="delete img"
+      (click)="deleteTask(task)"
+    />
+
+    <dialog #open>
+      <p>Are you sure to delete?</p>
+      <hr />
+      <div class="actions">
+        <button (click)="close()">Cancel</button>
+        <button (click)="handleConfirmDelete(task)">OK</button>
+      </div>
+    </dialog>
+  </div>
+</div>

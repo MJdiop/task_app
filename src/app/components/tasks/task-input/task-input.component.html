@@ -1,0 +1,12 @@
+<div class="task-input">
+  <input
+    class="input"
+    type="text"
+    placeholder="New task"
+    [(ngModel)]="value"
+    #ctrl="ngModel"
+  />
+  <button class="button btn" type="submit" (click)="handladdTask(value)">
+    Add task
+  </button>
+</div>

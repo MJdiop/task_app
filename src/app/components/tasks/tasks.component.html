@@ -1,0 +1,35 @@
+<div class="tasks">
+  <div class="tasks-header">
+    <h1>Tasks</h1>
+    <div class="clear">
+      <span> Clear </span>
+      <img
+        class="btn"
+        src="../../../assets/reload.png"
+        alt="clear img"
+        width="17px"
+        (click)="clearAll()"
+      />
+    </div>
+  </div>
+
+  <app-task-input
+    [value]="text"
+    (addNewTask)="addTask($event)"
+  ></app-task-input>
+
+  <div class="tasks-list">
+    <div>
+      @for (item of tasks; track item.text) {
+      <app-task-item
+        [task]="item"
+        (delete)="deleteTask(item)"
+        (toggleDone)="toggleTask(item)"
+        (edit)="editTask(item)"
+      ></app-task-item>
+      } @empty {
+      <span>No tasks</span>
+      }
+    </div>
+  </div>
+</div>

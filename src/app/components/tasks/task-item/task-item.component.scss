@@ -1,0 +1,113 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .task-text {
+    color: #1e1e1e;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    margin-left: 8px;
+    width: 290px;
+    border: none;
+  }
+
+  .input {
+    border: none;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .btn {
+    margin: 0 0.5rem;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #b9bdbf;
+    background: #fff;
+    border-radius: 4px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+
+    &:checked {
+      border: none;
+    }
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em var(--form-control-color);
+      background-image: url("../../../../assets/Checkbox.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform-origin: bottom left;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+}
+
+dialog {
+  width: 32vw;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px -8px #292c32, 0px 0px 8px 0px rgba(0, 0, 0, 0.16);
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.197);
+    backdrop-filter: blur(1px);
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #1e1e1e;
+    padding: 0 22px;
+  }
+
+  hr {
+    border: 0.1px solid rgba(128, 128, 128, 0.496);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+    padding: 0 18px 0 0;
+
+    button {
+      margin-left: 16px;
+      border: none;
+      color: #1f74b3;
+      font-size: 16px;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
